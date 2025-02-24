@@ -12,6 +12,8 @@ body{
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     box-sizing: border-box;
+    overflow-x: hidden; /* Elimina el desbordamiento horizontal */
+    overflow-y: auto;   /* Permite el desplazamiento vertical */
 }
 
 
