@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+
+h1 a{
+    color: rgba(221, 221, 221, 0.7);
+    font-size: 20px;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background: rgba(1, 1, 1, 0.7);
+    padding: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #ffff;
+    font-weight: 7000;
+}
+
+.navigation ul{
+    list-style: none;
+}
+
+.header .navigation ul li{
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a{
+    font-size: 18px;
+    color: #ffff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    transition: all .2s ease;
+}
+
+
+.header .navigation ul li a:hover{
+    background-color: #5ca2fe;
+}
+
+.header .navigation ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: rgba(1, 1, 1, 0.7);
+    display: none;
+}
+
+.header .navigation ul li ul li a{
+   font-size: 15px;
+   text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+}
+
+.header .navigation ul li ul li{
+    width: 100%;
+}
+
+.header .navigation ul li:hover >ul{
+    display: initial;
+}
+
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+
+.menu{
+    width: 45px;
+    height: 35px;
+}
+
+@media(max-width:950px){
+    .header label{
+        display: initial;
+    }
+    .header{
+        padding: 20px 10%;
+    }
+    .header .navigation{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(1, 1, 1, 0.7);
+        display: none;
+    }
+
+    .header .navigation ul li{
+        width: 100%;
+
+    }
+
+    .header .navigation ul li a{
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li{
+        background-color: rgba(1, 1, 1, 0.7);
+    }
+    .header .navigation ul li ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+    #toggle:checked ~ .navigation   {
+        display: block;
+    }    
+}
+
+.hero {
+    position: relative; /* Asegura que los elementos dentro de .hero se posicionen correctamente */
+    min-height: 100vh;
+    background-image: url('img/5G.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex; /* Permite alinear los botones dentro */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    flex-direction: column; /* Organiza los botones en columna */
+}
+
+.frame {
+    position: absolute; /* Posiciona los botones encima de la imagen */
+    top: 20%; /* Centra los botones verticalmente */
+    left: 50%; /* Centra los botones horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición exacta */
+    text-align: center; /* Centra los botones dentro del contenedor */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px ;
+}
+
+
+.apartado {
+    position: absolute; /* Posiciona los botones encima de la imagen */
+    top: 35%; /* Centra los botones verticalmente */
+    left: 50%; /* Centra los botones horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición exacta */
+    text-align: center; /* Centra los botones dentro del contenedor */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px ;
+}
+
+.custom-btn {
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    width: 120px;
+    color: #fff; /* Color del texto */
+    background: #00263563; /* Fondo transparente */
+    border: 2px solid #00354d; /* Borde neón */
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Efecto de resplandor */
+.custom-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 10%, rgba(0, 255, 234, 0) 60%);
+    transition: 0.3s;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* Efecto al pasar el mouse */
+.custom-btn:hover::before {
+    opacity: 1;
+}
+
+.custom-btn:hover {
+    background: rgba(0, 255, 234, 0.9);
+    box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+    color: #000; /* Cambiar el color del texto */
+    font-size: 14px; /* Aumentar el tamaño del texto */
+    transform: scale(1.1); /* Escalar ligeramente el botón */
+}
+
+/* Efecto de resplandor permanente */
+.custom-btn:active {
+    box-shadow: 0 0 30px #00d9ff, 0 0 50px #00d9ff, 0 0 80px #00d9ff;
+}
+
+
+/* Estilo del botón */
+.opacity-btn {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: rgba(0, 255, 234, 0.7);
+    border: 2px solid #00ffea;
+    border-radius: 5px;
+    position: relative;
+    z-index: 10; /* Asegura que el botón esté por encima del fondo */
+}
+
+/* Efecto hover en el botón */
+.opacity-btn:hover {
+    background-color: rgba(0, 255, 234, 1); /* Cambiar color del botón al pasar el mouse */
+}
+
+/* Efecto de opacidad en el fondo del body al pasar el mouse sobre el botón */
+.opacity-btn:hover ~ body {
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo más oscuro al hover */
+}
+
+.btn-container {
+    margin-left: 200px; /* Separar los botones */
+    margin-right: 200px;
+    justify-items: center;
+}
