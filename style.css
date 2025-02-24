@@ -14,7 +14,6 @@ body{
     box-sizing: border-box;
     transform: scale(0.9);
     transform-origin: top left;
-    width: 111.11%; /* Ajustar para compensar el escalado */
     overflow-x: hidden;
 
 }
