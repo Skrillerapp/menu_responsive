@@ -12,10 +12,6 @@ body{
     font-family: 'Poppins', sans-serif;
     min-height: 100vh;
     box-sizing: border-box;
-    transform: scale(0.9);
-    transform-origin: top left;
-    overflow-x: hidden;
-
 }
 
 
