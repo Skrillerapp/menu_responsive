@@ -8,25 +8,22 @@
 </head>
 <body>
     <header class="header"> 
-        <h1>
-            <a href="/index.html" style="text-decoration: none;">Página de comisiones//Febrero</a>
-        </h1>
-        <div class="logo"></div>
-        <input type="checkbox" id="toggle">
-        <label for="toggle"><img class="menu" src="img/menu.svg" alt="menu"></label>
-    <nav class="navigation">
+      <h1>
+        <a href="/index.html" style="text-decoration: none;">Comisiones//Febrero</a>
+    </h1>
+    <div class="logo"></div>
+    <input type="checkbox" id="toggle">
+    <label for="toggle"><img class="menu" src="img/menu.svg" alt="menu"></label>
 
-        <ul>
-            <li><a href="/index.html">inicio</a></li>
-            <li><a href="#">2025</a>
-            <ul>
-                <li><a href="/comisiones/2025/enero/enero.html">Enero</a></li>
-                <li><a href="/comisiones/2025/febrero/febrero.html">Febrero</a></li>
-            </li>   
-            </ul>
-        </ul>
 
-    </nav>
+<nav class="navigation" id="navbar">    </nav>
+
+    <script>
+        fetch('/nav.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data)
+            .catch(error => console.error('Error al cargar el menú:', error));
+    </script>
     
     </header>
 
